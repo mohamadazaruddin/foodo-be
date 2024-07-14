@@ -9,8 +9,6 @@ const {
   MYSQL_PASSWORD,
   MYSQL_DATABASE,
 } = process.env;
-
-console.log(MYSQL_PASSWORD, "pass");
 const sequelize = new Sequelize(MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, {
   host: MYSQL_HOST,
   dialect: DATABASE_TYPE,
