@@ -4,6 +4,7 @@ const {
   addRecipe,
   updateRecipe,
   deleteRecipe,
+  getUserRecipe,
 } = require("../services/recipe.service");
 
 exports.getAllrecipes = (req, res) => {
@@ -20,4 +21,7 @@ exports.updateRecipe = (req, res) => {
 };
 exports.deleteRecipe = (req, res) => {
   deleteRecipe(req, res);
+};
+exports.getUserRecipe = (req, res) => {
+  getUserRecipe(req, res);
 };

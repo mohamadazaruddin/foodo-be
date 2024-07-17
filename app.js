@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const userRoutes = require("./src/routes/user.route");
+const swaggerDocument = require("./swagger_output.json");
+
 const recipeRoutes = require("./src/routes/recipe.route");
 app.use(bodyParser.json());
 db.sequelize
@@ -26,8 +28,9 @@ app.use(
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use("/user", userRoutes);
-app.use("/recipe", recipeRoutes);
+
+app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/", userRoutes);
+app.use("/", recipeRoutes);
 
 module.exports = app;

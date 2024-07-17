@@ -28,7 +28,7 @@ module.exports = function (sequelize, DataTypes) {
           key: "uuid",
         },
       },
-      RecipeName: {
+      recipeName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
